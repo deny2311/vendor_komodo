@@ -89,6 +89,10 @@ PRODUCT_PACKAGES += \
     ssh-keygen \
     start-ssh
 
+# Overlays
+PRODUCT_PACKAGES += \
+    LauncherOverlay
+
 # rsync
 PRODUCT_PACKAGES += \
     rsync
