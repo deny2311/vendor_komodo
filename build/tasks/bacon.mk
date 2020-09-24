@@ -25,7 +25,7 @@ ifneq ($(BUILD_WITH_COLORS),0)
 endif
 
 KOMODO_TARGET_PACKAGE := $(PRODUCT_OUT)/$(KOMODO_VERSION).zip
-MD5 := prebuilts/build-tools/path/$(HOST_OS)-x86/md5sum
+MD5 := prebuilts/build-tools/path/$(HOST_PREBUILT_TAG)/md5sum
 
 .PHONY: komodo
 komodo: $(INTERNAL_OTA_PACKAGE_TARGET)
