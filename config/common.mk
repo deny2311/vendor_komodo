@@ -109,8 +109,15 @@ $(call inherit-product-if-exists, external/motorola/faceunlock/config.mk)
 
 # G-Apps build type
 ifeq ($(CURRENT_BUILD_TYPE), gapps)
-include vendor/gapps/config.mk
-endif
+# Inherit GMS, Pixel Features, and Modules.
+$(call inherit-product, vendor/google/gapps/Android.mk)
+
+# Don't preoptimize prebuilts when building GMS.
+DONT_DEXPREOPT_PREBUILTS := true
+
+# Pixel Features
+$(call inherit-product, vendor/google/pixel/Android.mk)
+endif #gapps
 
 ifeq ($(TARGET_GAPPS_ARCH),arm64)
 PRODUCT_PACKAGES += \
