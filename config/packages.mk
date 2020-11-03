@@ -25,7 +25,8 @@ PRODUCT_PACKAGES += \
     Longshot \
     NoCutoutOverlay \
     Recorder \
-    RetroMusicPlayer
+    RetroMusicPlayer \
+    QuickAccessWallet
 
 # Extra apps
 ifeq ($(CURRENT_BUILD_TYPE), nogapps)
