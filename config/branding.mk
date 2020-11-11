@@ -40,24 +40,24 @@ ifeq ($(KOMODO_VARIANT), BETA)
    endif
 endif
 
-# Type of zip
-ifeq ($(CURRENT_BUILD_TYPE), nogapps)
-     KOMODO_BUILD_ZIP_TYPE := TOXICOFERA
-else ifeq ($(CURRENT_BUILD_TYPE), microg)
-     KOMODO_BUILD_ZIP_TYPE := MICROG
-else ifeq ($(CURRENT_BUILD_TYPE), gapps)
-     KOMODO_BUILD_ZIP_TYPE := GAPPS
+# Type of GAPPS
+ifeq ($(KOMODO_GAPPS_TYPE), nogapps)
+     KOMODO_BUILD_GAPPS_TYPE := TOXICOFERA
+else ifeq ($(KOMODO_GAPPS_TYPE), microg)
+     KOMODO_BUILD_GAPPS_TYPE := MICROG
+else ifeq ($(KOMODO_GAPPS_TYPE), gapps)
+     KOMODO_BUILD_GAPPS_TYPE := GAPPS
 else
-    ifeq ($(CURRENT_BUILD_TYPE),)
-        $(warning "Komodo vendor: CURRENT_BUILD_TYPE is undefined, assuming nogapps")
+    ifeq ($(KOMODO_GAPPS_TYPE),)
+        $(warning "Komodo vendor: KOMODO_GAPPS_TYPE is undefined, assuming nogapps")
     else
-        $(warning "Komodo vendor: Incorrect value for CURRENT_BUILD_TYPE, forcing nogapps")
+        $(warning "Komodo vendor: Incorrect value for KOMODO_GAPPS_TYPE, forcing nogapps")
     endif
-    KOMODO_BUILD_ZIP_TYPE := TOXICOFERA
-    CURRENT_BUILD_TYPE := nogapps
+    KOMODO_BUILD_GAPPS_TYPE := TOXICOFERA
+    KOMODO_GAPPS_TYPE := nogapps
 endif
 
-KOMODO_VERSION := KomodoOS-$(KOMODO_BUILD)-$(KOMODO_PLATFORM_VERSION)-$(KOMODO_BUILD_DATE)-$(KOMODO_BUILD_TYPE)-$(KOMODO_BUILD_ZIP_TYPE)
+KOMODO_VERSION := KomodoOS-$(KOMODO_BUILD)-$(KOMODO_PLATFORM_VERSION)-$(KOMODO_BUILD_DATE)-$(KOMODO_BUILD_TYPE)-$(KOMODO_BUILD_GAPPS_TYPE)
 
 TARGET_PRODUCT_SHORT := $(subst aosp_,,$(KOMODO_BUILD))
 
@@ -69,7 +69,7 @@ KOMODO_PROPERTIES := \
     org.komodo.build_date=$(KOMODO_BUILD_DATE) \
     org.komodo.build_date_utc=$(KOMODO_BUILD_DATE_UTC) \
     org.komodo.build_type=$(KOMODO_BUILD_TYPE) \
-    org.komodo.ziptype=$(KOMODO_BUILD_ZIP_TYPE) \
+    org.komodo.gapps_type=$(KOMODO_BUILD_GAPPS_TYPE) \
     org.komodo.fingerprint=$(ROM_FINGERPRINT) \
     org.komodo.version.name=$(KOMODO_VERSION_NAME)
 
