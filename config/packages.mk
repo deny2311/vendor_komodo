@@ -29,7 +29,7 @@ PRODUCT_PACKAGES += \
     QuickAccessWallet
 
 # Extra apps
-ifeq ($(CURRENT_BUILD_TYPE), nogapps)
+ifeq ($(KOMODO_GAPPS_TYPE), nogapps)
 PRODUCT_PACKAGES += \
     messaging \
     Gallery2 \
