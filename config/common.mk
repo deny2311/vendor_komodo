@@ -115,21 +115,16 @@ PRODUCT_COPY_FILES += \
 $(call inherit-product-if-exists, external/motorola/faceunlock/config.mk)
 
 # G-Apps build type
-ifeq ($(CURRENT_BUILD_TYPE), gapps)
+ifeq ($(KOMODO_GAPPS_TYPE), gapps)
 # Inherit GMS, Pixel Features, and Modules.
-$(call inherit-product, vendor/google/gapps/Android.mk)
+$(call inherit-product, vendor/google/gms/config.mk)
 
 # Don't preoptimize prebuilts when building GMS.
 DONT_DEXPREOPT_PREBUILTS := true
 
 # Pixel Features
-$(call inherit-product, vendor/google/pixel/Android.mk)
+$(call inherit-product, vendor/google/pixel/config.mk)
 endif #gapps
-
-ifeq ($(TARGET_GAPPS_ARCH),arm64)
-PRODUCT_PACKAGES += \
-    MatchmakerPrebuiltPixel4
-endif
 
 # Gestures
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -163,7 +158,7 @@ PRODUCT_PACKAGES += bromite-webview
 endif
 
 # OTA
-include vendor/komodo/config/ota.mk
+#include vendor/komodo/config/ota.mk
 
 # ota allow downgrade
 ifneq ($(TARGET_BUILD_VARIANT),user)
