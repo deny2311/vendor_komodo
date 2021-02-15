@@ -45,8 +45,8 @@ komodo: $(INTERNAL_OTA_PACKAGE_TARGET)
 	@echo -e ${CL_RST}""${CL_RST}
 	@echo -e ${CL_RED}"================================================"${CL_RED}
 	@echo -e ${CL_RED}"Komodo Dragon Islands"${CL_RED}
-	@echo -e ${CLR_YLW}"zip: $(KOMODO_TARGET_PACKAGE)"${CLR_YLW}
-	@echo -e ${CLR_YLW}"md5: `cat $(KOMODO_TARGET_PACKAGE).md5sum | cut -d ' ' -f 1`"${CLR_YLW}
-	@echo -e ${CLR_YLW}"size:`ls -lah $(KOMODO_TARGET_PACKAGE) | cut -d ' ' -f 5`"${CLR_YLW}
+	@echo -e ${CL_YLW}"zip: $(KOMODO_TARGET_PACKAGE)"${CL_YLW}
+	@echo -e ${CL_YLW}"md5: `cat $(KOMODO_TARGET_PACKAGE).md5sum | cut -d ' ' -f 1`"${CL_YLW}
+	@echo -e ${CL_YLW}"size:`ls -lah $(KOMODO_TARGET_PACKAGE) | cut -d ' ' -f 5`"${CL_YLW}
 	@echo -e ${CL_RED}"================================================"${CL_RED}
 	@echo -e ${CL_RST}""${CL_RST}
