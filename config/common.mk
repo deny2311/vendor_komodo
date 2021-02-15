@@ -68,10 +68,6 @@ else
     PRODUCT_COPY_FILES += vendor/komodo/bootanimation/bootanimation-dark_1080.zip:$(TARGET_COPY_OUT_PRODUCT)/media/bootanimation-dark.zip
 endif
 
-# Charger
-PRODUCT_PACKAGES += \
-    charger_res_images
-
 # Copy all custom init rc files
 $(foreach f,$(wildcard vendor/komodo/prebuilt/common/etc/init/*.rc),\
     $(eval PRODUCT_COPY_FILES += $(f):system/etc/init/$(notdir $f)))
@@ -115,7 +111,7 @@ PRODUCT_COPY_FILES += \
 $(call inherit-product-if-exists, external/motorola/faceunlock/config.mk)
 
 # G-Apps build type
-ifeq ($(CURRENT_BUILD_TYPE), gapps)
+ifeq ($(KOMODO_GAPPS_TYPE), gapps)
 # Inherit GMS, Pixel Features, and Modules.
 $(call inherit-product, vendor/google/gapps/Android.mk)
 
