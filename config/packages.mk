@@ -26,8 +26,7 @@ PRODUCT_PACKAGES += \
     NoCutoutOverlay \
     Recorder \
     RetroMusicPlayer \
-    QuickAccessWallet \
-    SettingsIntelligenceGooglePrebuilt
+    QuickAccessWallet
 
 # Extra apps
 ifeq ($(KOMODO_GAPPS_TYPE), nogapps)
