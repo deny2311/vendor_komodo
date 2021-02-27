@@ -24,6 +24,17 @@ ifeq ($(KOMODO_VARIANT), RELEASE)
    ifeq ($(filter $(CURRENT_DEVICE), $(LIST)), $(CURRENT_DEVICE))
       KOMODO_BUILD_TYPE := RELEASE
       IS_RELEASE := true
+
+      # OTA
+      KOMODO_OTA_VERSION_CODE := 11
+
+      KOMODO_PROPERTIES += \
+         org.komodo.ota.version_code=$(KOMODO_OTA_VERSION_CODE) \
+         sys.ota.disable_uncrypt=1
+
+      PRODUCT_PACKAGES += \
+          Updates
+
   endif
   ifneq ($(IS_RELEASE), true)
       KOMODO_BUILD_TYPE := DEV
