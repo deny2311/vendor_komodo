@@ -6,8 +6,9 @@ then
   if [ -f $file_path ]; then
     file_size=$(stat -c%s $file_path)
     md5=$(cat "$file_path.md5sum" | cut -d' ' -f1)
-    datetime=$(grep ro\.build\.date\.utc $OUT/system/build.prop | cut -d= -f2);
+    datetime=$(grep org\.komodo\.build_date_utc $OUT/system/build.prop | cut -d= -f2);
     id=$(sha256sum $file_path | awk '{ print $1 }');
+    maintainer=$(grep org\.komodo\.maintainer $OUT/system/build.prop | cut -d= -f2)
     echo "{" > $file_path.json
     echo "  \"error\"       : false," >> $file_path.json
     echo "  \"id\"          : \"$id\"," >> $file_path.json
@@ -19,7 +20,7 @@ then
     echo "  \"website_url\" : \"https://komodo-os.my.id\"," >> $file_path.json
     echo "  \"news_url\"    : \"https://t.me/KomodOSRom\"," >> $file_path.json
     echo "  \"donate_url\"  : \"https://www.paypal.me/KomodoOS\"," >> $file_path.json
-    echo "  \"maintainer\"  : \"\"," >> $file_path.json
+    echo "  \"maintainer\"  : \"$maintainer\"," >> $file_path.json
     echo "  \"maintainer_url\" : \"https://github.com/\"," >> $file_path.json
     echo "  \"forum_url\"      : \"https://t.me/KomodOSGroup\"," >> $file_path.json
     echo "}" >> $file_path.json
