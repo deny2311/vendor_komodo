@@ -3,7 +3,7 @@ CURRENT_DEVICE=$(shell echo "$(TARGET_PRODUCT)" | cut -d'_' -f 2,3)
 
 # Komodo Version
 KOMODO_PLATFORM_VERSION := 2.9.4
-KOMODO_VERSION_NAME := Raja_Ampat
+KOMODO_VERSION_NAME := Pantura
 
 # Set all versions
 KOMODO_DATE_YEAR := $(shell date -u +%Y)
