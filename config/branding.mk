@@ -11,7 +11,6 @@ KOMODO_DATE_MONTH := $(shell date -u +%m)
 KOMODO_DATE_DAY := $(shell date -u +%d)
 KOMODO_DATE_HOUR := $(shell date -u +%H)
 KOMODO_DATE_MINUTE := $(shell date -u +%M)
-KOMODO_BUILD_DATE_UTC := $(shell date -d "$(KOMODO_DATE_YEAR)-$(KOMODO_DATE_MONTH)-$(KOMODO_DATE_DAY) $(KOMODO_DATE_HOUR):$(KOMODO_DATE_MINUTE) UTC" +%s)
 KOMODO_BUILD_DATE := $(KOMODO_DATE_YEAR)$(KOMODO_DATE_MONTH)$(KOMODO_DATE_DAY)-$(KOMODO_DATE_HOUR)$(KOMODO_DATE_MINUTE)
 
 # Default, it can be overriden.
@@ -77,8 +76,6 @@ ROM_FINGERPRINT := KomodoOS/$(KOMODO_PLATFORM_VERSION)/$(TARGET_PRODUCT_SHORT)/$
 KOMODO_PROPERTIES := \
     org.komodo.version=$(KOMODO_PLATFORM_VERSION) \
     org.komodo.version.display=$(KOMODO_VERSION) \
-    org.komodo.build_date=$(KOMODO_BUILD_DATE) \
-    org.komodo.build_date_utc=$(KOMODO_BUILD_DATE_UTC) \
     org.komodo.build_type=$(KOMODO_BUILD_TYPE) \
     org.komodo.gapps_type=$(KOMODO_BUILD_GAPPS_TYPE) \
     org.komodo.fingerprint=$(ROM_FINGERPRINT) \
