@@ -241,10 +241,6 @@ PRODUCT_PRODUCT_PROPERTIES += \
     setupwizard.feature.show_pai_screen_in_main_flow.carrier1839=false \
     setupwizard.feature.show_pixel_tos=false
 
-# Magisk Hide
-PRODUCT_COPY_FILES += \
-    vendor/komodo/prebuilt/system/etc/init.komodo.rc:system/etc/init/init.komodo.rc
-
 # Themed bootanimation
 TARGET_MISC_BLOCK_OFFSET ?= 0
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
