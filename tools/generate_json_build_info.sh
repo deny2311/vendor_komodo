@@ -6,7 +6,7 @@ then
   if [ -f $file_path ]; then
     file_size=$(stat -c%s $file_path)
     md5=$(cat "$file_path.md5sum" | cut -d' ' -f1)
-    datetime=$(grep org\.komodo\.build_date_utc $OUT/system/build.prop | cut -d= -f2);
+    datetime=$(grep ro\.build\.date\.utc $OUT/system/build.prop | cut -d= -f2);
     id=$(sha256sum $file_path | awk '{ print $1 }');
     maintainer=$(grep org\.komodo\.maintainer $OUT/system/build.prop | cut -d= -f2)
     version=$(grep org\.komodo\.version $OUT/system/build.prop | cut -d= -f2);
