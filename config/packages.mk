@@ -28,6 +28,11 @@ PRODUCT_PACKAGES += \
     RetroMusicPlayer \
     QuickAccessWallet
 
+# Google Camera Go
+ifneq ($(TARGET_USES_GCAMGO),true)
+PRODUCT_PACKAGES += GoogleCameraGo
+endif
+
 # Extra apps
 ifeq ($(KOMODO_GAPPS_TYPE), nogapps)
 PRODUCT_PACKAGES += \
