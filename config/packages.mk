@@ -29,8 +29,10 @@ PRODUCT_PACKAGES += \
     QuickAccessWallet
 
 # Google Camera Go
-ifneq ($(TARGET_USES_GCAMGO),true)
-PRODUCT_PACKAGES += GoogleCameraGo
+TARGET_USES_GCAMGO ?= true
+ifeq ($(TARGET_USES_GCAMGO),true)
+PRODUCT_PACKAGES += \
+    GoogleCameraGo
 endif
 
 # Extra apps
