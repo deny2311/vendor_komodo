@@ -76,6 +76,7 @@ KOMODO_PROPERTIES := \
     org.komodo.version=$(KOMODO_PLATFORM_VERSION) \
     org.komodo.version.display=$(KOMODO_VERSION) \
     org.komodo.build_type=$(KOMODO_BUILD_TYPE) \
+    org.komodo.build_date=$(KOMODO_BUILD_DATE) \
     org.komodo.gapps_type=$(KOMODO_BUILD_GAPPS_TYPE) \
     org.komodo.fingerprint=$(ROM_FINGERPRINT) \
     org.komodo.version.name=$(KOMODO_VERSION_NAME)
