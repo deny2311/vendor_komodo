@@ -3,13 +3,14 @@ if [ "$1" ]
 then
   file_path=$1
   file_name=$(basename "$file_path")
+  out=$(dirname "$file_path")
   if [ -f $file_path ]; then
     file_size=$(stat -c%s $file_path)
     md5=$(cat "$file_path.md5sum" | cut -d' ' -f1)
-    datetime=$(grep ro\.build\.date\.utc $OUT/system/build.prop | cut -d= -f2);
+    datetime=$(grep ro\.build\.date\.utc $out/system/build.prop | cut -d= -f2);
     id=$(sha256sum $file_path | awk '{ print $1 }');
-    maintainer=$(grep org\.komodo\.maintainer $OUT/system/build.prop | cut -d= -f2)
-    version=$(grep -m1 org\.komodo\.version $OUT/system/build.prop | cut -d= -f2);
+    maintainer=$(grep org\.komodo\.maintainer $out/system/build.prop | cut -d= -f2)
+    version=$(grep -m1 org\.komodo\.version $out/system/build.prop | cut -d= -f2);
     echo "{" > $file_path.json
     echo "  \"error\"       : false," >> $file_path.json
     echo "  \"id\"          : \"$id\"," >> $file_path.json
