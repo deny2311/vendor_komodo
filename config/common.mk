@@ -107,8 +107,16 @@ PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,vendor/komodo/fonts,$(TARGET_COPY_OUT_PRODUCT)/fonts) \
     vendor/komodo/prebuilt/system/etc/fonts_customization.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/fonts_customization.xml
 
-# Faceunlock
-$(call inherit-product-if-exists, external/motorola/faceunlock/config.mk)
+# Face Unlock
+TARGET_FACE_UNLOCK_SUPPORTED ?= true
+ifeq ($(TARGET_FACE_UNLOCK_SUPPORTED),true)
+PRODUCT_PACKAGES += \
+    FaceUnlockService
+PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+    ro.face_unlock_service.enabled=$(TARGET_FACE_UNLOCK_SUPPORTED)
+PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/android.hardware.biometrics.face.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/android.hardware.biometrics.face.xml
+endif
 
 # G-Apps build type
 ifeq ($(KOMODO_GAPPS_TYPE), gapps)
