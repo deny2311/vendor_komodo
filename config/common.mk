@@ -130,6 +130,13 @@ DONT_DEXPREOPT_PREBUILTS := true
 $(call inherit-product, vendor/google/pixel/config.mk)
 endif #gapps
 
+# Don't ship YouTube app in Komodo GApps build.
+TARGET_EXCLUDE_YOUTUBE ?= true
+ifeq ($(TARGET_EXCLUDE_YOUTUBE),true)
+PRODUCT_PACKAGES += \
+    YouTubeExcluded
+endif
+
 # Gestures
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.boot.vendor.overlay.theme=com.android.internal.systemui.navbar.gestural
