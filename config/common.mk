@@ -128,14 +128,13 @@ DONT_DEXPREOPT_PREBUILTS := true
 
 # Pixel Features
 $(call inherit-product, vendor/google/pixel/config.mk)
-endif #gapps
 
-# Don't ship YouTube app in Komodo GApps build.
-TARGET_EXCLUDE_YOUTUBE ?= true
-ifeq ($(TARGET_EXCLUDE_YOUTUBE),true)
+# Specific flag for exclude YouTube in GApps build.
+ifeq ($(TARGET_EXCLUDE_YOUTUBE), true)
 PRODUCT_PACKAGES += \
     YouTubeExcluded
 endif
+endif #gapps
 
 # Gestures
 PRODUCT_PROPERTY_OVERRIDES += \
