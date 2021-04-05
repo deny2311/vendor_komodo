@@ -19,6 +19,7 @@ PRODUCT_PACKAGES += \
 
 # Required
 PRODUCT_PACKAGES += \
+    GamingMode \
     ThemePicker \
     komodoOverlayStub \
     OmniStyle \
