@@ -117,7 +117,7 @@ PRODUCT_COPY_FILES += \
 endif
 
 # Fingerprint
-BUILD_FINGERPRINT := google/redfin/redfin:11/RQ1A.210205.004/7038034:user/release-keys
+BUILD_FINGERPRINT := google/redfin/redfin:11/RQ2A.210405.005/7181113:user/release-keys
 
 # G-Apps build type
 ifeq ($(KOMODO_GAPPS_TYPE), gapps)
