@@ -50,22 +50,18 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Bootanimation
 ifeq ($(TARGET_BOOT_ANIMATION_RES),1080)
-     PRODUCT_COPY_FILES += vendor/komodo/bootanimation/bootanimation_1080.zip:$(TARGET_COPY_OUT_PRODUCT)/media/bootanimation.zip
-     PRODUCT_COPY_FILES += vendor/komodo/bootanimation/bootanimation-dark_1080.zip:$(TARGET_COPY_OUT_PRODUCT)/media/bootanimation-dark.zip
+     PRODUCT_COPY_FILES += vendor/komodo/bootanimation/bootanimation-dark_1080.zip:$(TARGET_COPY_OUT_PRODUCT)/media/bootanimation.zip
 else ifeq ($(TARGET_BOOT_ANIMATION_RES),1440)
-     PRODUCT_COPY_FILES += vendor/komodo/bootanimation/bootanimation_1440.zip:$(TARGET_COPY_OUT_PRODUCT)/media/bootanimation.zip
-     PRODUCT_COPY_FILES += vendor/komodo/bootanimation/bootanimation-dark_1440.zip:$(TARGET_COPY_OUT_PRODUCT)/media/bootanimation-dark.zip
+     PRODUCT_COPY_FILES += vendor/komodo/bootanimation/bootanimation-dark_1440.zip:$(TARGET_COPY_OUT_PRODUCT)/media/bootanimation.zip
 else ifeq ($(TARGET_BOOT_ANIMATION_RES),720)
-     PRODUCT_COPY_FILES += vendor/komodo/bootanimation/bootanimation_720.zip:$(TARGET_COPY_OUT_PRODUCT)/media/bootanimation.zip
-     PRODUCT_COPY_FILES += vendor/komodo/bootanimation/bootanimation-dark_720.zip:$(TARGET_COPY_OUT_PRODUCT)/media/bootanimation-dark.zip
+     PRODUCT_COPY_FILES += vendor/komodo/bootanimation/bootanimation-dark_720.zip:$(TARGET_COPY_OUT_PRODUCT)/media/bootanimation.zip
 else
     ifeq ($(TARGET_BOOT_ANIMATION_RES),)
         $(warning "Komodo vendor: TARGET_BOOT_ANIMATION_RES is undefined, assuming 1080p")
     else
         $(warning "Komodo vendor: Current bootanimation res is not supported, forcing 1080p")
     endif
-    PRODUCT_COPY_FILES += vendor/komodo/bootanimation/bootanimation_1080.zip:$(TARGET_COPY_OUT_PRODUCT)/media/bootanimation.zip
-    PRODUCT_COPY_FILES += vendor/komodo/bootanimation/bootanimation-dark_1080.zip:$(TARGET_COPY_OUT_PRODUCT)/media/bootanimation-dark.zip
+    PRODUCT_COPY_FILES += vendor/komodo/bootanimation/bootanimation-dark_1080.zip:$(TARGET_COPY_OUT_PRODUCT)/media/bootanimation.zip
 endif
 
 # Copy all custom init rc files
@@ -254,14 +250,6 @@ PRODUCT_PRODUCT_PROPERTIES += \
     setupwizard.feature.skip_button_use_mobile_data.carrier1839=true \
     setupwizard.feature.show_pai_screen_in_main_flow.carrier1839=false \
     setupwizard.feature.show_pixel_tos=false
-
-# Themed bootanimation
-TARGET_MISC_BLOCK_OFFSET ?= 0
-PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
-    ro.misc.block.offset=$(TARGET_MISC_BLOCK_OFFSET)
-PRODUCT_PACKAGES += \
-    misc_writer_system \
-    themed_bootanimation
 
 # Themes & Overlays
 PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/komodo/overlay
