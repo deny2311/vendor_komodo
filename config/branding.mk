@@ -13,16 +13,12 @@ KOMODO_DATE_HOUR := $(shell date -u +%H)
 KOMODO_DATE_MINUTE := $(shell date -u +%M)
 KOMODO_BUILD_DATE := $(KOMODO_DATE_YEAR)$(KOMODO_DATE_MONTH)$(KOMODO_DATE_DAY)-$(KOMODO_DATE_HOUR)$(KOMODO_DATE_MINUTE)
 
-# Default, it can be overriden.
-KOMODO_BUILD_TYPE ?= DEV
-
 # Komodo Official Release
 LIST = $(shell cat vendor/komodo/komodo.devices | awk '{ print $$1 }')
 
-ifeq ($(KOMODO_VARIANT), RELEASE)
+ifeq ($(KOMODO_OFFICIAL), true)
    ifeq ($(filter $(CURRENT_DEVICE), $(LIST)), $(CURRENT_DEVICE))
-      KOMODO_BUILD_TYPE := RELEASE
-      IS_RELEASE := true
+      KOMODO_BUILD_TYPE := OFFICIAL
 
       # OTA
       KOMODO_OTA_VERSION_CODE := 11
@@ -33,20 +29,11 @@ ifeq ($(KOMODO_VARIANT), RELEASE)
       PRODUCT_PACKAGES += \
           Updates
 
+  else
+      KOMODO_BUILD_TYPE := UNOFFICIAL
   endif
-  ifneq ($(IS_RELEASE), true)
-      KOMODO_BUILD_TYPE := DEV
-  endif
-endif
-
-ifeq ($(KOMODO_VARIANT), BETA)
-   ifeq ($(filter $(CURRENT_DEVICE), $(LIST)), $(CURRENT_DEVICE))
-      KOMODO_BUILD_TYPE := BETA
-      IS_TEST := true
-   endif
-   ifneq ($(IS_TEST), true)
-     KOMODO_BUILD_TYPE := DEV
-   endif
+else
+      KOMODO_BUILD_TYPE := UNOFFICIAL
 endif
 
 # Type of GAPPS
@@ -66,11 +53,11 @@ else
     KOMODO_GAPPS_TYPE := nogapps
 endif
 
-KOMODO_VERSION := KomodoOS-$(KOMODO_BUILD)-$(KOMODO_PLATFORM_VERSION)-$(KOMODO_BUILD_DATE)-$(KOMODO_BUILD_TYPE)-$(KOMODO_BUILD_GAPPS_TYPE)
+KOMODO_VERSION := Komodo-v$(KOMODO_PLATFORM_VERSION)-$(KOMODO_BUILD)-$(KOMODO_BUILD_TYPE)-$(KOMODO_BUILD_GAPPS_TYPE)-$(KOMODO_BUILD_DATE)
 
 TARGET_PRODUCT_SHORT := $(subst komodo_,,$(KOMODO_BUILD))
 
-ROM_FINGERPRINT := KomodoOS/$(KOMODO_PLATFORM_VERSION)/$(TARGET_PRODUCT_SHORT)/$(KOMODO_BUILD_DATE)
+ROM_FINGERPRINT := Komodo/$(KOMODO_PLATFORM_VERSION)/$(TARGET_PRODUCT_SHORT)/$(KOMODO_BUILD_DATE)
 
 KOMODO_PROPERTIES := \
     org.komodo.version=$(KOMODO_PLATFORM_VERSION) \
