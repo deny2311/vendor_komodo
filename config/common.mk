@@ -256,7 +256,7 @@ PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/komodo/overlay
 DEVICE_PACKAGE_OVERLAYS += vendor/komodo/overlay/common
 
 # overlays
-include vendor/komodo/config/accents.mk
+#include vendor/komodo/config/accents.mk
 include vendor/komodo/config/primary.mk
 include vendor/komodo/config/font.mk
 
