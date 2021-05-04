@@ -45,16 +45,3 @@ PRODUCT_PACKAGES += \
     GboardGoPreb \
     ExactCalculator
 endif
-
-# Extra tools
-PRODUCT_PACKAGES += \
-    awk \
-    bash \
-    bzip2 \
-    curl \
-    htop \
-    libsepol \
-    nano \
-    wget \
-    xz \
-    zip
