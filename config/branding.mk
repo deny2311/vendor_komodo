@@ -67,6 +67,3 @@ KOMODO_PROPERTIES := \
     org.komodo.gapps_type=$(KOMODO_BUILD_GAPPS_TYPE) \
     org.komodo.fingerprint=$(ROM_FINGERPRINT) \
     org.komodo.version.name=$(KOMODO_VERSION_NAME)
-
-# Variable file name for jenkins
-$(info) $(shell echo $(KOMODO_VERSION) > $(OUT_DIR)/var-file_name)
