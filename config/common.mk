@@ -261,7 +261,7 @@ include vendor/komodo/config/primary.mk
 include vendor/komodo/config/font.mk
 
 #G-VisualMod
-include vendor/komodo/config/gvm.mk
+#include vendor/komodo/config/gvm.mk
 
 # Plugins
 -include packages/apps/Plugins/plugins.mk
