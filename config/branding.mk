@@ -2,8 +2,8 @@
 CURRENT_DEVICE=$(shell echo "$(TARGET_PRODUCT)" | cut -d'_' -f 2,3)
 
 # Komodo Version
-KOMODO_PLATFORM_VERSION := 3.1
-KOMODO_VERSION_NAME := Reptile
+KOMODO_PLATFORM_VERSION := 3.2
+KOMODO_VERSION_NAME := Rattle
 
 # Set all versions
 KOMODO_DATE_YEAR := $(shell date -u +%Y)
