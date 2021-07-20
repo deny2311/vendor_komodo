@@ -271,7 +271,4 @@ include vendor/komodo/config/gvm.mk
 # Plugins
 -include packages/apps/Plugins/plugins.mk
 
-# Qs Tile
--include vendor/komodo/config/qstile.mk
-
 -include $(WORKSPACE)/build_env/image-auto-bits.mk
