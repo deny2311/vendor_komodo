@@ -43,6 +43,16 @@
     <color name="user_icon_7">#ffff9800</color>
     <color name="user_icon_8">#ffff7043</color>
     <color name="system_error">#ffea4335</color>
+    
+    <!-- Rattle Pallet colors -->
+    <color name="Bolu">#ff6e6b</color>
+    <color name="Kukis">#ff8c5b</color>
+    <color name="Odading">#ffa15b</color>
+    <color name="Megalodon">#ef914f</color>
+    <color name="Keju">#23160c</color>
+    
+    <!-- System Background Color Primary -->
+    <color name="Deep_Jero">#212432</color>
 
     <!-- Multi-sim sim colors -->
     <color name="Teal_700">#ff5a9af8</color>
