@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <fonts-modification version="1">
 
+    <!-- Sniglets -->
+    <family customizationType="new-named-family" name="Sniglet">
+        <font weight="400" style="normal">Sniglet-Regular.ttf</font>
+        <font weight="700" style="normal">Sniglet-ExtraBold.ttf</font>
+    </family>
+    <alias name="Sniglet-medium" to="Sniglet" weight="500" />
+    <alias name="Sniglet-semi-bold" to="Sniglet" weight="600" />
+    <alias name="Sniglet-bold" to="Sniglet" weight="700" />
+
     <!-- Poppins -->
     <family customizationType="new-named-family" name="poppin">
         <font weight="400" style="normal">poppin-Regular.ttf</font>
