@@ -1,6 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <fonts-modification version="1">
 
+    <!-- Sniglets -->
+    <family customizationType="new-named-family" name="Sniglet">
+        <font weight="400" style="normal">Sniglet-Regular.ttf</font>
+        <font weight="700" style="normal">Sniglet-ExtraBold.ttf</font>
+    </family>
+    <alias name="Sniglet-medium" to="Sniglet" weight="500" />
+    <alias name="Sniglet-semi-bold" to="Sniglet" weight="600" />
+    <alias name="Sniglet-bold" to="Sniglet" weight="700" />
+
+    <!-- Poppins -->
+    <family customizationType="new-named-family" name="poppin">
+        <font weight="400" style="normal">poppin-Regular.ttf</font>
+        <font weight="400" style="italic">poppin-Italic.ttf</font>
+        <font weight="500" style="normal">poppin-Medium.ttf</font>
+        <font weight="500" style="italic">poppin-MediumItalic.ttf</font>
+        <font weight="700" style="normal">poppin-Bold.ttf</font>
+        <font weight="700" style="italic">poppin-BoldItalic.ttf</font>
+    </family>
+    <alias name="poppin-medium" to="poppin" weight="500" />
+    <alias name="poppin-semi-bold" to="poppin" weight="600" />
+    <alias name="poppin-bold" to="poppin" weight="700" />
+
     <!-- Accuratist -->
     <family customizationType="new-named-family" name="accuratist">
         <font weight="400" style="normal">Accuratist.ttf</font>
