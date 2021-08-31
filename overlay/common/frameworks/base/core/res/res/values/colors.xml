@@ -16,17 +16,11 @@
 -->
 
 <resources>
-
-    <color name="accent_device_default_700">#D37F45</color>
-    <color name="accent_device_default_dark">#D37F45</color>
-    <color name="accent_device_default_light">#D37F45</color>
-    <color name="material_deep_teal_200">#D37F45</color>
-    <color name="material_deep_teal_500">#D37F45</color>
     
     <!-- Colors specific to DeviceDefault themes. These are mostly pass-throughs to enable
      overlaying new theme colors. -->
-    <color name="accent_material_dark">#ff2581df</color>
-    <color name="accent_material_light">#ff1a73e8</color>
+    <color name="accent_device_default_dark">#D37F45</color>
+    <color name="accent_device_default_light">#D37F45</color>
     <color name="background_device_default_light">@android:color/white</color>
     <color name="primary_custom_dark_settings">@color/Deep_Jero</color>
     <color name="primary_custom_dark_settings_dark">@color/Deep_Jero</color>
