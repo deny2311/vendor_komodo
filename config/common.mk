@@ -127,9 +127,6 @@ $(call inherit-product, vendor/google/gms/config.mk)
 # Don't preoptimize prebuilts when building GMS.
 DONT_DEXPREOPT_PREBUILTS := true
 
-# Pixel Features
-$(call inherit-product, vendor/google/pixel/config.mk)
-
 # Specific flag for exclude YouTube in GApps build.
 ifeq ($(TARGET_EXCLUDE_YOUTUBE), true)
 PRODUCT_PACKAGES += \
