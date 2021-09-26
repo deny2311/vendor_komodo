@@ -116,9 +116,6 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.biometrics.face.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/android.hardware.biometrics.face.xml
 endif
 
-# Fingerprint
-BUILD_FINGERPRINT := google/redfin/redfin:11/RQ3A.210705.001/7380771:user/release-keys
-
 # G-Apps build type
 ifeq ($(KOMODO_GAPPS_TYPE), gapps)
 # Inherit GMS, Pixel Features, and Modules.
@@ -206,12 +203,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_BRAND ?= Komodo OS
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
-
-# Build fingerprint
-ifneq ($(BUILD_FINGERPRINT),)
-PRODUCT_PRODUCT_PROPERTIES += \
-    ro.build.fingerprint=$(BUILD_FINGERPRINT)
-endif
 
 ifeq ($(PRODUCT_GMS_CLIENTID_BASE),)
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
