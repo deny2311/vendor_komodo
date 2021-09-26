@@ -81,7 +81,7 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
 PRODUCT_DEXPREOPT_SPEED_APPS += \
     SystemUI \
     Settings \
-    KomodoQuickStep
+    Launcher3QuickStep
 
 # Enable AOSP Blur
 TARGET_USES_BLUR ?= true
