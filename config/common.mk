@@ -72,9 +72,8 @@ $(foreach f,$(wildcard vendor/komodo/prebuilt/common/etc/init/*.rc),\
 PRODUCT_COPY_FILES += \
     vendor/komodo/prebuilt/common/lib/content-types.properties:system/lib/content-types.properties
 
-# Default notification/alarm/ringtone sounds
+# Default notification/alarm sounds
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
-    ro.config.ringtone=Pyxis.ogg \
     ro.config.notification_sound=Rhea.ogg \
     ro.config.alarm_alert=Neon.ogg
 
