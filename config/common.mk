@@ -72,10 +72,11 @@ $(foreach f,$(wildcard vendor/komodo/prebuilt/common/etc/init/*.rc),\
 PRODUCT_COPY_FILES += \
     vendor/komodo/prebuilt/common/lib/content-types.properties:system/lib/content-types.properties
 
-# Default notification/alarm sounds
+# Default notification/alarm/ringtone sounds
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
-    ro.config.notification_sound=Popcorn.ogg \
-    ro.config.alarm_alert=Bright_morning.ogg
+    ro.config.ringtone=Pyxis.ogg \
+    ro.config.notification_sound=Rhea.ogg \
+    ro.config.alarm_alert=Neon.ogg
 
 # Dex Preopt Speed apps
 PRODUCT_DEXPREOPT_SPEED_APPS += \
