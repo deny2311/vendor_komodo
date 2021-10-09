@@ -26,7 +26,6 @@ PRODUCT_PACKAGES += \
     Stk \
     stats \
     ThemePicker \
-    ArrowThemesStub \
     OmniJaws \
     WeatherIcons
 

@@ -85,7 +85,7 @@ PRODUCT_MINIMIZE_JAVA_DEBUG_INFO := true
 PRODUCT_RESTRICT_VENDOR_FILES := false
 
 # Face Unlock
-TARGET_FACE_UNLOCK_SUPPORTED ?= true
+TARGET_FACE_UNLOCK_SUPPORTED ?= false
 ifeq ($(TARGET_FACE_UNLOCK_SUPPORTED),true)
 PRODUCT_PACKAGES += \
     FaceUnlockService
@@ -96,7 +96,7 @@ PRODUCT_COPY_FILES += \
 endif
 
 # Bootanimation
-include vendor/bianca/config/bootanimation.mk
+# include vendor/bianca/config/bootanimation.mk
 
 # Fonts
 include vendor/bianca/config/fonts.mk
