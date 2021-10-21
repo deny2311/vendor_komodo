@@ -33,7 +33,8 @@ endif
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
   ro.bianca.version=$(BIANCA_VERSION) \
   ro.bianca.releasetype=$(BIANCA_BUILD_TYPE) \
-  ro.modversion=V$(OTA_VERSION)
+  ro.bianca.ota.version=$(OTA_VERSION) \
+  ro.modversion=$(VERSION)
 
 BIANCA_DISPLAY_VERSION := $(PRODUCT_BRAND)-v$(VERSION)-$(BIANCA_BUILD_TYPE)
 
