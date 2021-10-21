@@ -39,3 +39,9 @@ BIANCA_DISPLAY_VERSION := $(PRODUCT_BRAND)-v$(VERSION)-$(BIANCA_BUILD_TYPE)
 
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
   ro.bianca.display.version=$(BIANCA_DISPLAY_VERSION)
+
+# Gapps
+ifeq ($(WITH_GAPPS),true)
+    $(call inherit-product, vendor/gapps/common/common-vendor.mk)
+endif
+
