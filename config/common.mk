@@ -18,7 +18,7 @@ PRODUCT_PACKAGE_OVERLAYS += \
     vendor/bianca/overlay/common
 
 #PRODUCT_PACKAGE_OVERLAYS += \
-#    vendor/bianca/overlay/themes/ArrowIcons
+#    vendor/bianca/overlay/themes/BiancaIcons
 
 PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += \
     vendor/bianca/overlay/common \
@@ -42,7 +42,7 @@ PRODUCT_COPY_FILES += \
 
 # init file
 PRODUCT_COPY_FILES += \
-    vendor/bianca/prebuilt/common/etc/init.local.rc:$(TARGET_COPY_OUT_SYSTEM)/etc/init/init.arrow.rc
+    vendor/bianca/prebuilt/common/etc/init.local.rc:$(TARGET_COPY_OUT_SYSTEM)/etc/init/init.bianca.rc
 
 # Backup Tool
 PRODUCT_COPY_FILES += \

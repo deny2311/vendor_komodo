@@ -28,7 +28,7 @@ import (
 )
 
 func init() {
-	android.RegisterModuleType("arrow_generator", GeneratorFactory)
+	android.RegisterModuleType("bianca_generator", GeneratorFactory)
 
 	pctx.HostBinToolVariable("sboxCmd", "sbox")
 }
@@ -210,12 +210,12 @@ func (g *Module) GenerateAndroidBuildActions(ctx android.ModuleContext) {
 	if depRoot == "" {
 		depRoot = ctx.ModuleDir()
 	} else {
-		depRoot = arrowExpandVariables(ctx, depRoot)
+		depRoot = biancaExpandVariables(ctx, depRoot)
 	}
 
 	// Glob dep_files property
 	for _, dep_file := range g.properties.Dep_files {
-		dep_file = arrowExpandVariables(ctx, dep_file)
+		dep_file = biancaExpandVariables(ctx, dep_file)
 		globPath := filepath.Join(depRoot, dep_file)
 		paths, err := ctx.GlobWithDeps(globPath, nil)
 		if err != nil {
@@ -227,7 +227,7 @@ func (g *Module) GenerateAndroidBuildActions(ctx android.ModuleContext) {
 		}
 	}
 
-	exCmd := arrowExpandVariables(ctx, String(g.properties.Cmd))
+	exCmd := biancaExpandVariables(ctx, String(g.properties.Cmd))
 
 	// Dummy output dep
 	dummyDep := android.PathForModuleGen(ctx, ".dummy_dep")

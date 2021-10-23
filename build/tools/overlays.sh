@@ -6,7 +6,7 @@ cur_dir=`pwd`
 flashable_zip_template="$ANDROID_BUILD_TOP/vendor/bianca/build/tools/overlays_zip_template"
 overlays_path_top="$ANDROID_BUILD_TOP/vendor/bianca/overlay/themes/"
 overlays_path_temp="$ANDROID_BUILD_TOP/overlays_temp"
-overlays_zip_name="arrow_overlays.zip"
+overlays_zip_name="bianca_overlays.zip"
 cd $ANDROID_BUILD_TOP
 cd $overlays_path_top
 
