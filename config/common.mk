@@ -21,7 +21,7 @@ PRODUCT_PACKAGE_OVERLAYS += \
 #    vendor/bianca/overlay/themes/BiancaIcons
 
 PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += \
-    vendor/bianca/overlay/common \
+    vendor/bianca/overlay/common
 
 # Dex preopt
 PRODUCT_DEXPREOPT_SPEED_APPS += \
