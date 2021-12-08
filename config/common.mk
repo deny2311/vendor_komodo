@@ -117,3 +117,5 @@ include vendor/komodo/config/sounds.mk
 # GameSpace
 include vendor/komodo/config/gamespace.mk
 
+# Lawnicons
+$(call inherit-product-if-exists, vendor/lawnicons/overlay.mk)
