@@ -69,6 +69,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     vendor/komodo/prebuilt/common/etc/sensitive_pn.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sensitive_pn.xml
 
+# Permissions for Google product apps
+PRODUCT_COPY_FILES += \
+    vendor/komodo/config/permissions/default-permissions-product.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/default-permissions/default-permissions-product.xml
+
 # Power whitelist
 PRODUCT_COPY_FILES += \
     vendor/komodo/prebuilt/common/etc/sysconfig/custom-power-whitelist.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sysconfig/custom-power-whitelist.xml
@@ -112,3 +116,4 @@ include vendor/komodo/config/sounds.mk
 
 # GameSpace
 include vendor/komodo/config/gamespace.mk
+
