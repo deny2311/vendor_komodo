@@ -2,7 +2,7 @@
 
 # Exports
 
-. vendor/bianca/build/tools/colors
+. vendor/komodo/build/tools/colors
 
 export Changelog=Changelog.txt
 

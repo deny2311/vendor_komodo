@@ -153,7 +153,7 @@ def fetch_query(remote_url, query):
 
 if __name__ == '__main__':
     # Default to ArrowOS Gerrit
-    default_gerrit = 'https://review.biancaos.net'
+    default_gerrit = 'https://review.komodoos.net'
 
     parser = argparse.ArgumentParser(formatter_class=argparse.RawDescriptionHelpFormatter, description=textwrap.dedent('''\
         repopick.py is a utility to simplify the process of cherry picking
@@ -426,9 +426,9 @@ if __name__ == '__main__':
                 print('Trying to fetch the change from GitHub')
 
             if args.pull:
-                cmd = ['git pull --no-edit bianca', item['fetch'][method]['ref']]
+                cmd = ['git pull --no-edit komodo', item['fetch'][method]['ref']]
             else:
-                cmd = ['git fetch bianca', item['fetch'][method]['ref']]
+                cmd = ['git fetch komodo', item['fetch'][method]['ref']]
             if args.quiet:
                 cmd.append('--quiet')
             else:

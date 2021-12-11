@@ -13,36 +13,75 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-PRODUCT_BRAND := BiancaProject
-VERSION := 2.0
+# Komodo Version
+KOMODO_PLATFORM_VERSION := 4.0
+KOMODO_VERSION_NAME := Reptile
+
 OTA_VERSION := 12
 
-# Official tag
-ifeq ($(BIANCA_OFFICIAL), true)
-    BIANCA_BUILD_TYPE := OFFICIAL
+# Define Var
+CURRENT_DEVICE=$(shell echo "$(TARGET_PRODUCT)" | cut -d'_' -f 2,3)
+
+# Set all versions
+KOMODO_DATE_YEAR := $(shell date -u +%Y)
+KOMODO_DATE_MONTH := $(shell date -u +%m)
+KOMODO_DATE_DAY := $(shell date -u +%d)
+KOMODO_DATE_HOUR := $(shell date -u +%H)
+KOMODO_DATE_MINUTE := $(shell date -u +%M)
+KOMODO_BUILD_DATE := $(KOMODO_DATE_YEAR)$(KOMODO_DATE_MONTH)$(KOMODO_DATE_DAY)-$(KOMODO_DATE_HOUR)$(KOMODO_DATE_MINUTE)
+
+# Komodo Official Release
+LIST = $(shell cat official-devices/komodo.devices | awk '{ print $$1 }')
+
+ifeq ($(KOMODO_OFFICIAL), true)
+   ifeq ($(filter $(CURRENT_DEVICE), $(LIST)), $(CURRENT_DEVICE))
+      KOMODO_BUILD_TYPE := OFFICIAL
+   else
+      KOMODO_BUILD_TYPE := UNOFFICIAL
+   endif
 else
-    BIANCA_BUILD_TYPE := UNOFFICIAL
+      KOMODO_BUILD_TYPE := UNOFFICIAL
 endif
 
-ifeq ($(WITH_GAPPS), true)
-    BIANCA_VERSION := $(PRODUCT_BRAND)-v$(VERSION)-Gapps-$(BIANCA_BUILD_TYPE)-$(BIANCA_BUILD)-$(shell date +%d%m%Y-%H%M)
+# Type of GAPPS
+ifeq ($(KOMODO_GAPPS_TYPE), nogapps)
+     KOMODO_BUILD_GAPPS_TYPE := TOXICOFERA
+else ifeq ($(KOMODO_GAPPS_TYPE), microg)
+     KOMODO_BUILD_GAPPS_TYPE := MICROG
+else ifeq ($(KOMODO_GAPPS_TYPE), gapps)
+     KOMODO_BUILD_GAPPS_TYPE := GAPPS
 else
-    BIANCA_VERSION := $(PRODUCT_BRAND)-v$(VERSION)-$(BIANCA_BUILD_TYPE)-$(BIANCA_BUILD)-$(shell date +%d%m%Y-%H%M)
+    ifeq ($(KOMODO_GAPPS_TYPE),)
+        $(warning "Komodo vendor: KOMODO_GAPPS_TYPE is undefined, assuming nogapps")
+    else
+        $(warning "Komodo vendor: Incorrect value for KOMODO_GAPPS_TYPE, forcing nogapps")
+    endif
+    KOMODO_BUILD_GAPPS_TYPE := TOXICOFERA
+    KOMODO_GAPPS_TYPE := nogapps
 endif
 
-PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
-  ro.bianca.version=$(BIANCA_VERSION) \
-  ro.bianca.releasetype=$(BIANCA_BUILD_TYPE) \
-  ro.bianca.ota.version=$(OTA_VERSION) \
-  ro.modversion=$(VERSION)
+KOMODO_VERSION := Komodo-v$(KOMODO_PLATFORM_VERSION)-$(KOMODO_BUILD)-$(KOMODO_BUILD_TYPE)-$(KOMODO_BUILD_GAPPS_TYPE)-$(KOMODO_BUILD_DATE)
 
-BIANCA_DISPLAY_VERSION := $(PRODUCT_BRAND)-v$(VERSION)-$(BIANCA_BUILD_TYPE)
+TARGET_PRODUCT_SHORT := $(subst komodo_,,$(KOMODO_BUILD))
+
+ROM_FINGERPRINT := Komodo/$(KOMODO_PLATFORM_VERSION)/$(TARGET_PRODUCT_SHORT)/$(KOMODO_BUILD_DATE)
 
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
-  ro.bianca.display.version=$(BIANCA_DISPLAY_VERSION)
+    org.komodo.version=$(KOMODO_PLATFORM_VERSION) \
+    org.komodo.version.display=$(KOMODO_VERSION) \
+    org.komodo.build_type=$(KOMODO_BUILD_TYPE) \
+    org.komodo.build_date=$(KOMODO_BUILD_DATE) \
+    org.komodo.gapps_type=$(KOMODO_BUILD_GAPPS_TYPE) \
+    org.komodo.fingerprint=$(ROM_FINGERPRINT) \
+    org.komodo.version.name=$(KOMODO_VERSION_NAME)
+
+KOMODO_DISPLAY_VERSION := $(PRODUCT_BRAND)-v$(VERSION)-$(KOMODO_BUILD_TYPE)
+
+PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+  ro.komodo.display.version=$(KOMODO_DISPLAY_VERSION)
 
 # Gapps
-ifeq ($(WITH_GAPPS),true)
+ifeq ($(KOMODO_GAPPS_TYPE),gapps)
     $(call inherit-product, vendor/gapps/common/common-vendor.mk)
 endif
 

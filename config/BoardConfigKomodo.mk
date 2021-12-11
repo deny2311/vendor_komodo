@@ -13,10 +13,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License
 
-include vendor/bianca/config/BoardConfigKernel.mk
+include vendor/komodo/config/BoardConfigKernel.mk
 
 ifeq ($(BOARD_USES_QCOM_HARDWARE),true)
-include vendor/bianca/config/BoardConfigQcom.mk
+include vendor/komodo/config/BoardConfigQcom.mk
 endif
 
-include vendor/bianca/config/BoardConfigSoong.mk
+include vendor/komodo/config/BoardConfigSoong.mk

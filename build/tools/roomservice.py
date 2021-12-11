@@ -43,12 +43,12 @@ DEBUG = False
 default_manifest = ".repo/manifest.xml"
 
 custom_local_manifest = ".repo/local_manifests/roomservice.xml"
-custom_default_revision = "bianca-12.0"
-custom_dependencies = "bianca.dependencies"
+custom_default_revision = "komodo-12.0"
+custom_dependencies = "komodo.dependencies"
 org_manifest = "ArrowOS-Devices"  # leave empty if org is provided in manifest
 org_display = "ArrowOS-Devices"  # needed for displaying
 
-bianca_manifest = ".repo/manifests/bianca.xml"
+komodo_manifest = ".repo/manifests/komodo.xml"
 hals_manifest = ".repo/manifests/hals.xml"
 
 github_auth = None
@@ -172,7 +172,7 @@ def is_in_manifest(project_path):
 def add_to_manifest(repos, fallback_branch=None):
     lm = load_manifest(custom_local_manifest)
     mlm = load_manifest(default_manifest)
-    biancam = load_manifest(bianca_manifest)
+    komodom = load_manifest(komodo_manifest)
     halm = load_manifest(hals_manifest)
 
     for repo in repos:
@@ -201,8 +201,8 @@ def add_to_manifest(repos, fallback_branch=None):
         existing_m_project = None
         if exists_in_tree(mlm, repo_target) != None:
             existing_m_project = exists_in_tree(mlm, repo_target)
-        elif exists_in_tree(biancam, repo_target) != None:
-            existing_m_project = exists_in_tree(biancam, repo_target)
+        elif exists_in_tree(komodom, repo_target) != None:
+            existing_m_project = exists_in_tree(komodom, repo_target)
         elif exists_in_tree(halm, repo_target) != None:
             existing_m_project = exists_in_tree(halm, repo_target)
 

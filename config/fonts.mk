@@ -19,16 +19,16 @@ $(call inherit-product-if-exists, external/google-fonts/lato/fonts.mk)
 $(call inherit-product-if-exists, external/google-fonts/rubik/fonts.mk)
 
 PRODUCT_COPY_FILES += \
-    vendor/bianca/fonts/fonts_customization.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/fonts_customization.xml \
-    vendor/bianca/fonts/GoogleSans-BoldItalic.ttf:$(TARGET_COPY_OUT_PRODUCT)/fonts/GoogleSans-BoldItalic.ttf \
-    vendor/bianca/fonts/GoogleSans-Bold.ttf:$(TARGET_COPY_OUT_PRODUCT)/fonts/GoogleSans-Bold.ttf \
-    vendor/bianca/fonts/GoogleSans-Italic.ttf:$(TARGET_COPY_OUT_PRODUCT)/fonts/GoogleSans-Italic.ttf \
-    vendor/bianca/fonts/GoogleSans-MediumItalic.ttf:$(TARGET_COPY_OUT_PRODUCT)/fonts/GoogleSans-MediumItalic.ttf \
-    vendor/bianca/fonts/GoogleSans-Medium.ttf:$(TARGET_COPY_OUT_PRODUCT)/fonts/GoogleSans-Medium.ttf \
-    vendor/bianca/fonts/GoogleSans-Regular.ttf:$(TARGET_COPY_OUT_PRODUCT)/fonts/GoogleSans-Regular.ttf \
-    vendor/bianca/fonts/SlateForOnePlus-Book.ttf:$(TARGET_COPY_OUT_PRODUCT)/fonts/SlateForOnePlus-Book.ttf \
-    vendor/bianca/fonts/SlateForOnePlus-Medium.ttf:$(TARGET_COPY_OUT_PRODUCT)/fonts/SlateForOnePlus-Medium.ttf \
-    vendor/bianca/fonts/SlateForOnePlus-Regular.ttf:$(TARGET_COPY_OUT_PRODUCT)/fonts/SlateForOnePlus-Regular.ttf
+    vendor/komodo/fonts/fonts_customization.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/fonts_customization.xml \
+    vendor/komodo/fonts/GoogleSans-BoldItalic.ttf:$(TARGET_COPY_OUT_PRODUCT)/fonts/GoogleSans-BoldItalic.ttf \
+    vendor/komodo/fonts/GoogleSans-Bold.ttf:$(TARGET_COPY_OUT_PRODUCT)/fonts/GoogleSans-Bold.ttf \
+    vendor/komodo/fonts/GoogleSans-Italic.ttf:$(TARGET_COPY_OUT_PRODUCT)/fonts/GoogleSans-Italic.ttf \
+    vendor/komodo/fonts/GoogleSans-MediumItalic.ttf:$(TARGET_COPY_OUT_PRODUCT)/fonts/GoogleSans-MediumItalic.ttf \
+    vendor/komodo/fonts/GoogleSans-Medium.ttf:$(TARGET_COPY_OUT_PRODUCT)/fonts/GoogleSans-Medium.ttf \
+    vendor/komodo/fonts/GoogleSans-Regular.ttf:$(TARGET_COPY_OUT_PRODUCT)/fonts/GoogleSans-Regular.ttf \
+    vendor/komodo/fonts/SlateForOnePlus-Book.ttf:$(TARGET_COPY_OUT_PRODUCT)/fonts/SlateForOnePlus-Book.ttf \
+    vendor/komodo/fonts/SlateForOnePlus-Medium.ttf:$(TARGET_COPY_OUT_PRODUCT)/fonts/SlateForOnePlus-Medium.ttf \
+    vendor/komodo/fonts/SlateForOnePlus-Regular.ttf:$(TARGET_COPY_OUT_PRODUCT)/fonts/SlateForOnePlus-Regular.ttf
 
 PRODUCT_PACKAGES += \
     FontArbutusSourceOverlay \

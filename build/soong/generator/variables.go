@@ -6,12 +6,12 @@ import (
 	"android/soong/android"
 )
 
-func biancaExpandVariables(ctx android.ModuleContext, in string) string {
-	biancaVars := ctx.Config().VendorConfig("biancaVarsPlugin")
+func komodoExpandVariables(ctx android.ModuleContext, in string) string {
+	komodoVars := ctx.Config().VendorConfig("komodoVarsPlugin")
 
 	out, err := android.Expand(in, func(name string) (string, error) {
-		if biancaVars.IsSet(name) {
-			return biancaVars.String(name), nil
+		if komodoVars.IsSet(name) {
+			return komodoVars.String(name), nil
 		}
 		// This variable is not for us, restore what the original
 		// variable string will have looked like for an Expand

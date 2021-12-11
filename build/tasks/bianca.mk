@@ -14,12 +14,12 @@
 # limitations under the License.
 
 # -----------------------------------------------------------------
-# BIANCA OTA update package
+# KOMODO OTA update package
 
-BIANCA_TARGET_PACKAGE := $(PRODUCT_OUT)/$(BIANCA_VERSION).zip
+KOMODO_TARGET_PACKAGE := $(PRODUCT_OUT)/$(KOMODO_VERSION).zip
 
-.PHONY: dudu
-dudu: $(INTERNAL_OTA_PACKAGE_TARGET)
-	$(hide) ln -f $(INTERNAL_OTA_PACKAGE_TARGET) $(BIANCA_TARGET_PACKAGE)
-	$(hide) $(MD5SUM) $(BIANCA_TARGET_PACKAGE) | sed "s|$(PRODUCT_OUT)/||" > $(BIANCA_TARGET_PACKAGE).md5sum
-	@echo "Package Complete: $(BIANCA_TARGET_PACKAGE)" >&2
+.PHONY: komodo
+komodo: $(INTERNAL_OTA_PACKAGE_TARGET)
+	$(hide) ln -f $(INTERNAL_OTA_PACKAGE_TARGET) $(KOMODO_TARGET_PACKAGE)
+	$(hide) $(MD5SUM) $(KOMODO_TARGET_PACKAGE) | sed "s|$(PRODUCT_OUT)/||" > $(KOMODO_TARGET_PACKAGE).md5sum
+	@echo "Package Complete: $(KOMODO_TARGET_PACKAGE)" >&2

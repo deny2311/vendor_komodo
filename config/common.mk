@@ -12,16 +12,16 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-include vendor/bianca/config/branding.mk
+include vendor/komodo/config/branding.mk
 
 PRODUCT_PACKAGE_OVERLAYS += \
-    vendor/bianca/overlay/common
+    vendor/komodo/overlay/common
 
 #PRODUCT_PACKAGE_OVERLAYS += \
-#    vendor/bianca/overlay/themes/BiancaIcons
+#    vendor/komodo/overlay/themes/KomodoIcons
 
 PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += \
-    vendor/bianca/overlay/common
+    vendor/komodo/overlay/common
 
 # Dex preopt
 PRODUCT_DEXPREOPT_SPEED_APPS += \
@@ -30,7 +30,7 @@ PRODUCT_DEXPREOPT_SPEED_APPS += \
 
 # Enable Android Beam on all targets
 PRODUCT_COPY_FILES += \
-    vendor/bianca/config/permissions/android.software.nfc.beam.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/android.software.nfc.beam.xml
+    vendor/komodo/config/permissions/android.software.nfc.beam.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/android.software.nfc.beam.xml
 
 # Enable SIP+VoIP on all targets
 PRODUCT_COPY_FILES += \
@@ -42,19 +42,19 @@ PRODUCT_COPY_FILES += \
 
 # init file
 PRODUCT_COPY_FILES += \
-    vendor/bianca/prebuilt/common/etc/init.local.rc:$(TARGET_COPY_OUT_SYSTEM)/etc/init/init.bianca.rc
+    vendor/komodo/prebuilt/common/etc/init.local.rc:$(TARGET_COPY_OUT_SYSTEM)/etc/init/init.komodo.rc
 
 # Backup Tool
 PRODUCT_COPY_FILES += \
-    vendor/bianca/build/tools/backuptool.sh:install/bin/backuptool.sh \
-    vendor/bianca/build/tools/backuptool.functions:install/bin/backuptool.functions \
-    vendor/bianca/build/tools/50-bianca.sh:$(TARGET_COPY_OUT_SYSTEM)/addon.d/50-bianca.sh
+    vendor/komodo/build/tools/backuptool.sh:install/bin/backuptool.sh \
+    vendor/komodo/build/tools/backuptool.functions:install/bin/backuptool.functions \
+    vendor/komodo/build/tools/50-komodo.sh:$(TARGET_COPY_OUT_SYSTEM)/addon.d/50-komodo.sh
 
 ifneq ($(strip $(AB_OTA_PARTITIONS) $(AB_OTA_POSTINSTALL_CONFIG)),)
 PRODUCT_COPY_FILES += \
-    vendor/bianca/build/tools/backuptool_ab.sh:$(TARGET_COPY_OUT_SYSTEM)/bin/backuptool_ab.sh \
-    vendor/bianca/build/tools/backuptool_ab.functions:$(TARGET_COPY_OUT_SYSTEM)/bin/backuptool_ab.functions \
-    vendor/bianca/build/tools/backuptool_postinstall.sh:$(TARGET_COPY_OUT_SYSTEM)/bin/backuptool_postinstall.sh
+    vendor/komodo/build/tools/backuptool_ab.sh:$(TARGET_COPY_OUT_SYSTEM)/bin/backuptool_ab.sh \
+    vendor/komodo/build/tools/backuptool_ab.functions:$(TARGET_COPY_OUT_SYSTEM)/bin/backuptool_ab.functions \
+    vendor/komodo/build/tools/backuptool_postinstall.sh:$(TARGET_COPY_OUT_SYSTEM)/bin/backuptool_postinstall.sh
 ifneq ($(TARGET_BUILD_VARIANT),user)
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     ro.ota.allow_downgrade=true
@@ -67,11 +67,11 @@ PRODUCT_COPY_FILES += \
 
 # Sensitive Phone Numbers list
 PRODUCT_COPY_FILES += \
-    vendor/bianca/prebuilt/common/etc/sensitive_pn.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sensitive_pn.xml
+    vendor/komodo/prebuilt/common/etc/sensitive_pn.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sensitive_pn.xml
 
 # Power whitelist
 PRODUCT_COPY_FILES += \
-    vendor/bianca/prebuilt/common/etc/sysconfig/custom-power-whitelist.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sysconfig/custom-power-whitelist.xml
+    vendor/komodo/prebuilt/common/etc/sysconfig/custom-power-whitelist.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sysconfig/custom-power-whitelist.xml
 
 # Do not include art debug targets
 PRODUCT_ART_TARGET_INCLUDE_DEBUG_BUILD := false
@@ -102,13 +102,13 @@ PRODUCT_PACKAGES += \
     bootanimation.zip
 
 # Fonts
-include vendor/bianca/config/fonts.mk
+include vendor/komodo/config/fonts.mk
 
 # Packages
-include vendor/bianca/config/packages.mk
+include vendor/komodo/config/packages.mk
 
 # Props
-include vendor/bianca/config/props.mk
+include vendor/komodo/config/props.mk
 
 # Sounds
-include vendor/bianca/config/sounds.mk
+include vendor/komodo/config/sounds.mk

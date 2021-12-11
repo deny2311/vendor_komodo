@@ -1,6 +1,6 @@
 #!/system/bin/sh
 
-A="log -p i -t Bianca"
+A="log -p i -t Komodo"
 $A "______ _                       "
 $A "| ___ (_)                      "
 $A "| |_/ /_  __ _ _ __   ___ __ _ "

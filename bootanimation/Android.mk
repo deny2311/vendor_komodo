@@ -21,7 +21,7 @@ $(TARGET_GENERATED_BOOTANIMATION): $(SOONG_ZIP)
 	@echo "Building bootanimation.zip"
 	@rm -rf $(dir $@)
 	@mkdir -p $(dir $@)
-	$(hide) tar xfp vendor/bianca/bootanimation/bootanimation.tar -C $(INTERMEDIATES)
+	$(hide) tar xfp vendor/komodo/bootanimation/bootanimation.tar -C $(INTERMEDIATES)
 	$(hide) if [ $(TARGET_SCREEN_HEIGHT) -lt $(TARGET_SCREEN_WIDTH) ]; then \
 	    IMAGEWIDTH=$(TARGET_SCREEN_HEIGHT); \
 	else \
@@ -39,7 +39,7 @@ $(TARGET_GENERATED_BOOTANIMATION): $(SOONG_ZIP)
 	done; \
 	prebuilts/tools-extras/${HOST_OS}-x86/bin/mogrify -resize $$RESOLUTION -colors 250 $(INTERMEDIATES)/*/*.png; \
 	echo "$$IMAGESCALEWIDTH $$IMAGESCALEHEIGHT 40" > $(INTERMEDIATES)/desc.txt; \
-	cat vendor/bianca/bootanimation/desc.txt >> $(INTERMEDIATES)/desc.txt
+	cat vendor/komodo/bootanimation/desc.txt >> $(INTERMEDIATES)/desc.txt
 	$(hide) $(SOONG_ZIP) -L 0 -o $(TARGET_GENERATED_BOOTANIMATION) -C $(INTERMEDIATES) -D $(INTERMEDIATES)
 
 ifeq ($(TARGET_BOOTANIMATION),)
