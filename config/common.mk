@@ -109,6 +109,3 @@ include vendor/komodo/config/props.mk
 
 # Sounds
 include vendor/komodo/config/sounds.mk
-
-# GameSpace
-$(call inherit-product-if-exists, packages/apps/GameSpace/gamespace.mk)
