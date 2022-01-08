@@ -109,3 +109,6 @@ include vendor/komodo/config/props.mk
 
 # Sounds
 include vendor/komodo/config/sounds.mk
+
+# GameSpace
+include vendor/komodo/config/gamespace.mk
