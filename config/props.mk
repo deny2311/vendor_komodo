@@ -64,9 +64,11 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += ro.adb.secure=1
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += persist.sys.strictmode.disable=true
 endif
 
+ifeq ($(KOMODO_GAPPS_TYPE),)
 # GBoard
 PRODUCT_PRODUCT_PROPERTIES += \
     ro.com.google.ime.kb_pad_port_b=1
+endif
 
 # Enable support of one-handed mode
 PRODUCT_PRODUCT_PROPERTIES += \

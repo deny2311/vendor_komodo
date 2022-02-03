@@ -80,8 +80,3 @@ KOMODO_DISPLAY_VERSION := $(PRODUCT_BRAND)-v$(VERSION)-$(KOMODO_BUILD_TYPE)
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
   ro.komodo.display.version=$(KOMODO_DISPLAY_VERSION)
 
-# Gapps
-ifeq ($(KOMODO_GAPPS_TYPE),gapps)
-    $(call inherit-product, vendor/gms/common/common-vendor.mk)
-endif
-

@@ -99,6 +99,14 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.biometrics.face.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/android.hardware.biometrics.face.xml
 endif
 
+# Gapps
+ifeq ($(KOMODO_GAPPS_TYPE),gapps)
+$(call inherit-product, vendor/gms/products/gms.mk)
+DONT_DEXPREOPT_PREBUILTS := true
+PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/komodo/overlay-pixel
+DEVICE_PACKAGE_OVERLAYS += vendor/komodo/overlay-pixel/common
+endif
+
 # Bootanimation
 include vendor/komodo/bootanimation/bootanimation.mk
 
