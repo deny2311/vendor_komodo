@@ -14,8 +14,8 @@
 # limitations under the License.
 
 # Komodo Version
-KOMODO_PLATFORM_VERSION := 4.0
-KOMODO_VERSION_NAME := Sabre
+KOMODO_PLATFORM_VERSION := 4.1
+KOMODO_VERSION_NAME := Serunai
 
 OTA_VERSION := 12
 
