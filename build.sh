@@ -344,7 +344,7 @@ if [ "$upload_to_sf" = "true" ]; then
 fi
 
 if [ "$upload_to_sf" = "false" ]; then
-    export KOMODO_VARIANT=false
+    export KOMODO_OFFICIAL=false
 fi
 
 # BUILD Variant
@@ -405,7 +405,7 @@ build_message "lunch komodo_"$device_codename"-"$build_type""
 lunch komodo_"$device_codename"-"$build_type"
 mkfifo reading
 tee "${BUILDLOG}" < reading &
-build_message "masak "$target_command" -j"$jobs""
+build_message "mka "$target_command" -j"$jobs""
 sleep 2
 build_message "🛠️ Building..."
 progress &
