@@ -71,6 +71,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     Exchange2
 
+# Extra packages
+PRODUCT_PACKAGES += \
+    KomodoWalls
+
 # Filesystems tools
 PRODUCT_PACKAGES += \
     fsck.ntfs \
