@@ -82,6 +82,6 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
 
 # Gapps
 ifeq ($(KOMODO_GAPPS_TYPE),gapps)
-    $(call inherit-product, vendor/gapps/common/common-vendor.mk)
+    $(call inherit-product, vendor/gms/common/common-vendor.mk)
 endif
 
