@@ -14,10 +14,10 @@
 # limitations under the License.
 
 # Komodo Version
-KOMODO_PLATFORM_VERSION := 4.1
-KOMODO_VERSION_NAME := Serunai
+KOMODO_PLATFORM_VERSION := 4.2
+KOMODO_VERSION_NAME := Sakura
 
-OTA_VERSION := 12
+OTA_VERSION := 12.1
 
 # Define Var
 CURRENT_DEVICE=$(shell echo "$(TARGET_PRODUCT)" | cut -d'_' -f 2,3)
