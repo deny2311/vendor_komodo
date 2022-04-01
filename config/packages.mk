@@ -100,6 +100,15 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     rsync
 
+# Settings Wallpaper and style overlay
+ifeq ($(KOMODO_GAPPS_TYPE),gapps)
+PRODUCT_PACKAGES += \
+    SettingsWallpaperNexusOverlay
+else
+PRODUCT_PACKAGES += \
+    SettingsWallpaperLauncherOverlay
+endif
+
 # These packages are excluded from user builds
 PRODUCT_PACKAGES_DEBUG += \
     procmem
