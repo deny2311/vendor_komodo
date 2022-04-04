@@ -18,10 +18,6 @@ PRODUCT_PACKAGES += \
     GesturalNavigationOverlayMedium \
     GesturalNavigationOverlayHidden
 
-# Overlays
-PRODUCT_PACKAGES += \
-    LauncherOverlay
-
 # Settings Wallpaper and style overlay
 ifeq ($(KOMODO_GAPPS_TYPE),gapps)
 PRODUCT_PACKAGES += \
