@@ -43,12 +43,6 @@ endif
 PRODUCT_PACKAGES += \
     SimpleDeviceConfig
 
-# Navbar
-PRODUCT_PACKAGES += \
-    GesturalNavigationOverlayLong \
-    GesturalNavigationOverlayMedium \
-    GesturalNavigationOverlayHidden
-
 # Extra tools
 PRODUCT_PACKAGES += \
     7z \
@@ -92,22 +86,9 @@ PRODUCT_PACKAGES += \
     ssh-keygen \
     start-ssh
 
-# Overlays
-PRODUCT_PACKAGES += \
-    LauncherOverlay
-
 # rsync
 PRODUCT_PACKAGES += \
     rsync
-
-# Settings Wallpaper and style overlay
-ifeq ($(KOMODO_GAPPS_TYPE),gapps)
-PRODUCT_PACKAGES += \
-    SettingsWallpaperNexusOverlay
-else
-PRODUCT_PACKAGES += \
-    SettingsWallpaperLauncherOverlay
-endif
 
 # These packages are excluded from user builds
 PRODUCT_PACKAGES_DEBUG += \

@@ -111,6 +111,9 @@ include vendor/komodo/config/packages.mk
 # Props
 include vendor/komodo/config/props.mk
 
+# RRO Overlays
+include vendor/komodo/config/rro_overlays.mk
+
 # Sounds
 include vendor/komodo/config/sounds.mk
 
